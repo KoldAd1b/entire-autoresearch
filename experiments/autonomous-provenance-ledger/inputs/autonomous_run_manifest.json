@@ -1,0 +1,498 @@
+{
+  "system": "tiny_autonomous_research_system",
+  "git_commit": "not-a-git-repo",
+  "device": "mps",
+  "environment": {
+    "python": "3.13.12",
+    "platform": "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+    "torch": "2.12.0"
+  },
+  "objective": "maximize sklearn_digits validation accuracy under a short local compute budget",
+  "baseline_trial": "trial_001",
+  "best_trial": "trial_005",
+  "baseline_accuracy": 0.8866666666666667,
+  "best_accuracy": 0.96,
+  "absolute_improvement": 0.07333333333333325,
+  "trials": [
+    {
+      "trial_id": "trial_001",
+      "config": {
+        "trial_id": "trial_001",
+        "model_type": "mlp",
+        "hidden": 64,
+        "dropout": 0.0,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 6,
+        "rationale": "Bootstrap low-capacity MLP baseline."
+      },
+      "dataset": {
+        "name": "sklearn_digits",
+        "samples": 1797,
+        "shape": "1797 x 8 x 8",
+        "classes": 10
+      },
+      "params": 4810,
+      "runtime_seconds": 0.8486,
+      "checkpoint": "results/checkpoints/trial_001_mlp.pt",
+      "final": {
+        "trial_id": "trial_001",
+        "epoch": 6,
+        "train_loss": 0.9348713053361345,
+        "test_loss": 0.9459726145532397,
+        "train_accuracy": 0.894580549368968,
+        "test_accuracy": 0.8866666666666667
+      },
+      "history": [
+        {
+          "trial_id": "trial_001",
+          "epoch": 1,
+          "train_loss": 2.130111484591308,
+          "test_loss": 2.1362676419152153,
+          "train_accuracy": 0.6102449888641426,
+          "test_accuracy": 0.5844444444444444
+        },
+        {
+          "trial_id": "trial_001",
+          "epoch": 2,
+          "train_loss": 1.921375515377778,
+          "test_loss": 1.930292862256368,
+          "train_accuracy": 0.718634001484781,
+          "test_accuracy": 0.6911111111111111
+        },
+        {
+          "trial_id": "trial_001",
+          "epoch": 3,
+          "train_loss": 1.6668711133417413,
+          "test_loss": 1.6767703098720974,
+          "train_accuracy": 0.7973273942093542,
+          "test_accuracy": 0.7688888888888888
+        },
+        {
+          "trial_id": "trial_001",
+          "epoch": 4,
+          "train_loss": 1.3939542656220945,
+          "test_loss": 1.405897625817193,
+          "train_accuracy": 0.8389012620638456,
+          "test_accuracy": 0.8177777777777778
+        },
+        {
+          "trial_id": "trial_001",
+          "epoch": 5,
+          "train_loss": 1.1428662961557696,
+          "test_loss": 1.1554315821329753,
+          "train_accuracy": 0.8589458054936897,
+          "test_accuracy": 0.84
+        },
+        {
+          "trial_id": "trial_001",
+          "epoch": 6,
+          "train_loss": 0.9348713053361345,
+          "test_loss": 0.9459726145532397,
+          "train_accuracy": 0.894580549368968,
+          "test_accuracy": 0.8866666666666667
+        }
+      ]
+    },
+    {
+      "trial_id": "trial_002",
+      "config": {
+        "trial_id": "trial_002",
+        "model_type": "mlp",
+        "hidden": 128,
+        "dropout": 0.1,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 6,
+        "rationale": "Increase MLP capacity and add mild dropout."
+      },
+      "dataset": {
+        "name": "sklearn_digits",
+        "samples": 1797,
+        "shape": "1797 x 8 x 8",
+        "classes": 10
+      },
+      "params": 9610,
+      "runtime_seconds": 0.5989,
+      "checkpoint": "results/checkpoints/trial_002_mlp.pt",
+      "final": {
+        "trial_id": "trial_002",
+        "epoch": 6,
+        "train_loss": 0.5781987267639696,
+        "test_loss": 0.6032595099343194,
+        "train_accuracy": 0.9168522642910171,
+        "test_accuracy": 0.8955555555555555
+      },
+      "history": [
+        {
+          "trial_id": "trial_002",
+          "epoch": 1,
+          "train_loss": 2.0436779713754576,
+          "test_loss": 2.050966608259413,
+          "train_accuracy": 0.7015590200445434,
+          "test_accuracy": 0.7044444444444444
+        },
+        {
+          "trial_id": "trial_002",
+          "epoch": 2,
+          "train_loss": 1.6996962784304828,
+          "test_loss": 1.7135650655958388,
+          "train_accuracy": 0.8225686711210096,
+          "test_accuracy": 0.8022222222222222
+        },
+        {
+          "trial_id": "trial_002",
+          "epoch": 3,
+          "train_loss": 1.305394663311591,
+          "test_loss": 1.3266163010067409,
+          "train_accuracy": 0.874536005939124,
+          "test_accuracy": 0.8555555555555555
+        },
+        {
+          "trial_id": "trial_002",
+          "epoch": 4,
+          "train_loss": 0.9723741360390372,
+          "test_loss": 0.998531625005934,
+          "train_accuracy": 0.8953229398663697,
+          "test_accuracy": 0.8711111111111111
+        },
+        {
+          "trial_id": "trial_002",
+          "epoch": 5,
+          "train_loss": 0.7347006162140399,
+          "test_loss": 0.7578429526752896,
+          "train_accuracy": 0.9094283593170007,
+          "test_accuracy": 0.8933333333333333
+        },
+        {
+          "trial_id": "trial_002",
+          "epoch": 6,
+          "train_loss": 0.5781987267639696,
+          "test_loss": 0.6032595099343194,
+          "train_accuracy": 0.9168522642910171,
+          "test_accuracy": 0.8955555555555555
+        }
+      ]
+    },
+    {
+      "trial_id": "trial_003",
+      "config": {
+        "trial_id": "trial_003",
+        "model_type": "cnn",
+        "hidden": 64,
+        "dropout": 0.1,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 6,
+        "rationale": "Switch to image-biased CNN architecture."
+      },
+      "dataset": {
+        "name": "sklearn_digits",
+        "samples": 1797,
+        "shape": "1797 x 8 x 8",
+        "classes": 10
+      },
+      "params": 38282,
+      "runtime_seconds": 0.9131,
+      "checkpoint": "results/checkpoints/trial_003_cnn.pt",
+      "final": {
+        "trial_id": "trial_003",
+        "epoch": 6,
+        "train_loss": 0.23556838043825043,
+        "test_loss": 0.26207292477289834,
+        "train_accuracy": 0.933184855233853,
+        "test_accuracy": 0.9311111111111111
+      },
+      "history": [
+        {
+          "trial_id": "trial_003",
+          "epoch": 1,
+          "train_loss": 2.1682795276443607,
+          "test_loss": 2.170728367699517,
+          "train_accuracy": 0.43429844097995546,
+          "test_accuracy": 0.4088888888888889
+        },
+        {
+          "trial_id": "trial_003",
+          "epoch": 2,
+          "train_loss": 1.7544018350536061,
+          "test_loss": 1.7644826730092367,
+          "train_accuracy": 0.6711210096510765,
+          "test_accuracy": 0.6666666666666666
+        },
+        {
+          "trial_id": "trial_003",
+          "epoch": 3,
+          "train_loss": 0.9644742973132229,
+          "test_loss": 0.9797340626186795,
+          "train_accuracy": 0.8544914625092799,
+          "test_accuracy": 0.8622222222222222
+        },
+        {
+          "trial_id": "trial_003",
+          "epoch": 4,
+          "train_loss": 0.4814171913427694,
+          "test_loss": 0.4870837818251716,
+          "train_accuracy": 0.9094283593170007,
+          "test_accuracy": 0.9088888888888889
+        },
+        {
+          "trial_id": "trial_003",
+          "epoch": 5,
+          "train_loss": 0.31517101820964855,
+          "test_loss": 0.3205283953083886,
+          "train_accuracy": 0.9302152932442465,
+          "test_accuracy": 0.9377777777777778
+        },
+        {
+          "trial_id": "trial_003",
+          "epoch": 6,
+          "train_loss": 0.23556838043825043,
+          "test_loss": 0.26207292477289834,
+          "train_accuracy": 0.933184855233853,
+          "test_accuracy": 0.9311111111111111
+        }
+      ]
+    },
+    {
+      "trial_id": "trial_004",
+      "config": {
+        "trial_id": "trial_004",
+        "model_type": "cnn",
+        "hidden": 96,
+        "dropout": 0.1,
+        "learning_rate": 0.0008,
+        "batch_size": 64,
+        "epochs": 6,
+        "rationale": "Exploit the current CNN winner, adjust capacity/lr based on generalization gap."
+      },
+      "dataset": {
+        "name": "sklearn_digits",
+        "samples": 1797,
+        "shape": "1797 x 8 x 8",
+        "classes": 10
+      },
+      "params": 55018,
+      "runtime_seconds": 1.2298,
+      "checkpoint": "results/checkpoints/trial_004_cnn.pt",
+      "final": {
+        "trial_id": "trial_004",
+        "epoch": 6,
+        "train_loss": 0.3156153265533398,
+        "test_loss": 0.35844355689154733,
+        "train_accuracy": 0.8990348923533779,
+        "test_accuracy": 0.8911111111111111
+      },
+      "history": [
+        {
+          "trial_id": "trial_004",
+          "epoch": 1,
+          "train_loss": 2.0882463283510497,
+          "test_loss": 2.0942735820346408,
+          "train_accuracy": 0.7253155159613957,
+          "test_accuracy": 0.7222222222222222
+        },
+        {
+          "trial_id": "trial_004",
+          "epoch": 2,
+          "train_loss": 1.4951878637407299,
+          "test_loss": 1.5250856261783177,
+          "train_accuracy": 0.7260579064587973,
+          "test_accuracy": 0.6977777777777778
+        },
+        {
+          "trial_id": "trial_004",
+          "epoch": 3,
+          "train_loss": 0.842114055608057,
+          "test_loss": 0.8796667541397942,
+          "train_accuracy": 0.793615441722346,
+          "test_accuracy": 0.7755555555555556
+        },
+        {
+          "trial_id": "trial_004",
+          "epoch": 4,
+          "train_loss": 0.5330662529116307,
+          "test_loss": 0.5784062070316739,
+          "train_accuracy": 0.852264291017075,
+          "test_accuracy": 0.8311111111111111
+        },
+        {
+          "trial_id": "trial_004",
+          "epoch": 5,
+          "train_loss": 0.3973331856302801,
+          "test_loss": 0.4529520663287904,
+          "train_accuracy": 0.8982925018559762,
+          "test_accuracy": 0.8688888888888889
+        },
+        {
+          "trial_id": "trial_004",
+          "epoch": 6,
+          "train_loss": 0.3156153265533398,
+          "test_loss": 0.35844355689154733,
+          "train_accuracy": 0.8990348923533779,
+          "test_accuracy": 0.8911111111111111
+        }
+      ]
+    },
+    {
+      "trial_id": "trial_005",
+      "config": {
+        "trial_id": "trial_005",
+        "model_type": "cnn",
+        "hidden": 96,
+        "dropout": 0.1,
+        "learning_rate": 0.0012,
+        "batch_size": 64,
+        "epochs": 6,
+        "rationale": "Exploit the current CNN winner, adjust capacity/lr based on generalization gap."
+      },
+      "dataset": {
+        "name": "sklearn_digits",
+        "samples": 1797,
+        "shape": "1797 x 8 x 8",
+        "classes": 10
+      },
+      "params": 55018,
+      "runtime_seconds": 0.713,
+      "checkpoint": "results/checkpoints/trial_005_cnn.pt",
+      "final": {
+        "trial_id": "trial_005",
+        "epoch": 6,
+        "train_loss": 0.17967213639393503,
+        "test_loss": 0.16752652789155642,
+        "train_accuracy": 0.9517446176688938,
+        "test_accuracy": 0.96
+      },
+      "history": [
+        {
+          "trial_id": "trial_005",
+          "epoch": 1,
+          "train_loss": 2.0132594163451447,
+          "test_loss": 2.004072225358751,
+          "train_accuracy": 0.6636971046770601,
+          "test_accuracy": 0.6977777777777778
+        },
+        {
+          "trial_id": "trial_005",
+          "epoch": 2,
+          "train_loss": 1.081289689542633,
+          "test_loss": 1.0371189371744791,
+          "train_accuracy": 0.8314773570898293,
+          "test_accuracy": 0.8577777777777778
+        },
+        {
+          "trial_id": "trial_005",
+          "epoch": 3,
+          "train_loss": 0.47180418541852687,
+          "test_loss": 0.4267751027478112,
+          "train_accuracy": 0.896807720861173,
+          "test_accuracy": 0.9111111111111111
+        },
+        {
+          "trial_id": "trial_005",
+          "epoch": 4,
+          "train_loss": 0.2860305828679112,
+          "test_loss": 0.26957487328184976,
+          "train_accuracy": 0.9242761692650334,
+          "test_accuracy": 0.9333333333333333
+        },
+        {
+          "trial_id": "trial_005",
+          "epoch": 5,
+          "train_loss": 0.21540703690308682,
+          "test_loss": 0.20841918560883238,
+          "train_accuracy": 0.941351150705271,
+          "test_accuracy": 0.9377777777777778
+        },
+        {
+          "trial_id": "trial_005",
+          "epoch": 6,
+          "train_loss": 0.17967213639393503,
+          "test_loss": 0.16752652789155642,
+          "train_accuracy": 0.9517446176688938,
+          "test_accuracy": 0.96
+        }
+      ]
+    },
+    {
+      "trial_id": "trial_006",
+      "config": {
+        "trial_id": "trial_006",
+        "model_type": "cnn",
+        "hidden": 144,
+        "dropout": 0.1,
+        "learning_rate": 0.0009599999999999999,
+        "batch_size": 64,
+        "epochs": 6,
+        "rationale": "Exploit the current CNN winner, adjust capacity/lr based on generalization gap."
+      },
+      "dataset": {
+        "name": "sklearn_digits",
+        "samples": 1797,
+        "shape": "1797 x 8 x 8",
+        "classes": 10
+      },
+      "params": 80122,
+      "runtime_seconds": 1.3501,
+      "checkpoint": "results/checkpoints/trial_006_cnn.pt",
+      "final": {
+        "trial_id": "trial_006",
+        "epoch": 6,
+        "train_loss": 0.24656801960073582,
+        "test_loss": 0.2592328076892429,
+        "train_accuracy": 0.9302152932442465,
+        "test_accuracy": 0.9311111111111111
+      },
+      "history": [
+        {
+          "trial_id": "trial_006",
+          "epoch": 1,
+          "train_loss": 2.03253120568919,
+          "test_loss": 2.0359549151526557,
+          "train_accuracy": 0.6792873051224945,
+          "test_accuracy": 0.6422222222222222
+        },
+        {
+          "trial_id": "trial_006",
+          "epoch": 2,
+          "train_loss": 1.176014681789905,
+          "test_loss": 1.1962465217378404,
+          "train_accuracy": 0.8411284335560505,
+          "test_accuracy": 0.8533333333333334
+        },
+        {
+          "trial_id": "trial_006",
+          "epoch": 3,
+          "train_loss": 0.6038690254966153,
+          "test_loss": 0.620600802368588,
+          "train_accuracy": 0.8530066815144766,
+          "test_accuracy": 0.8644444444444445
+        },
+        {
+          "trial_id": "trial_006",
+          "epoch": 4,
+          "train_loss": 0.38211196368946,
+          "test_loss": 0.3976830050680372,
+          "train_accuracy": 0.8997772828507795,
+          "test_accuracy": 0.9111111111111111
+        },
+        {
+          "trial_id": "trial_006",
+          "epoch": 5,
+          "train_loss": 0.2880881716785558,
+          "test_loss": 0.29227092795901827,
+          "train_accuracy": 0.9235337787676318,
+          "test_accuracy": 0.9222222222222223
+        },
+        {
+          "trial_id": "trial_006",
+          "epoch": 6,
+          "train_loss": 0.24656801960073582,
+          "test_loss": 0.2592328076892429,
+          "train_accuracy": 0.9302152932442465,
+          "test_accuracy": 0.9311111111111111
+        }
+      ]
+    }
+  ]
+}

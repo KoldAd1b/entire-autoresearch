@@ -1,0 +1,84 @@
+{
+  "ledger_type": "autonomous_research_provenance",
+  "thesis": "Entire is strong as an agent-trace spine, but autonomous research requires joined metrics, decisions, environment metadata, datasets, and artifact pointers.",
+  "entire_checkpoint": {
+    "checkpoint_id": "dd916a8e5979",
+    "tool_calls": 11,
+    "assistant_turns": 7,
+    "user_turns": 1,
+    "test_mentions": 20,
+    "failure_mentions": 3,
+    "has_commit_linkage": true
+  },
+  "autonomous_run": {
+    "system": "tiny_autonomous_research_system",
+    "objective": "maximize sklearn_digits validation accuracy under a short local compute budget",
+    "device": "mps",
+    "environment": {
+      "python": "3.13.12",
+      "platform": "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+      "torch": "2.12.0"
+    },
+    "baseline_trial": "trial_001",
+    "best_trial": "trial_005",
+    "baseline_accuracy": 0.8866666666666667,
+    "best_accuracy": 0.96,
+    "absolute_improvement": 0.07333333333333325,
+    "trial_count": 6,
+    "decision_count": 6
+  },
+  "best_trial": {
+    "trial_id": "trial_005",
+    "model_type": "cnn",
+    "hidden": 96,
+    "dropout": 0.1,
+    "learning_rate": 0.0012,
+    "params": 55018,
+    "test_accuracy": 0.96,
+    "checkpoint": "results/checkpoints/trial_005_cnn.pt"
+  },
+  "entire_fit": {
+    "entire_checkpoint_only_score": 7,
+    "joined_research_system_score": 10,
+    "max_score": 10,
+    "missing_from_entire_only": [
+      "metrics",
+      "dataset_identity",
+      "scheduler_decisions"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "inputs/autonomous_run_manifest.json",
+      "bytes": 15075,
+      "sha256": "4fc0d5e268b2dcbbacb62c08f33477976d670dd7fb0550a0f4c9480ca88b5385"
+    },
+    {
+      "path": "inputs/decisions.jsonl",
+      "bytes": 2612,
+      "sha256": "62c1385fade3aa998b33514f14a54cb3deaa733e01ee06f7caf2e1f5322cf0a0"
+    },
+    {
+      "path": "inputs/entire_checkpoint_explain.txt",
+      "bytes": 2936,
+      "sha256": "858f96be31a25051156faa86ec3af4326e446723bbb722dea067882efff98d0e"
+    },
+    {
+      "path": "inputs/entire_fit_scorecard.json",
+      "bytes": 2009,
+      "sha256": "010ece9b58a0437697704badf07484deb5c310b8c32fa75f2c160807f54908af"
+    },
+    {
+      "path": "inputs/trajectory.csv",
+      "bytes": 810,
+      "sha256": "ac2ea635278080a08ac14d62526c10686ed39e95eed00d1fd50c2138ab608d0f"
+    }
+  ],
+  "production_recommendations": [
+    "Expose first-class artifact links from checkpoints to metrics, manifests, model checkpoints, and object-store URIs.",
+    "Capture scheduler decisions as structured events, not only transcript prose.",
+    "Separate agent trace, shell logs, and experiment logs while linking them under one research-run id.",
+    "Add local/offline search over checkpoint and artifact metadata for private research workflows.",
+    "Make hook integration health part of the run ledger because automatic capture reliability is critical."
+  ]
+}

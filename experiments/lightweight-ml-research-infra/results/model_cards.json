@@ -1,0 +1,29 @@
+[
+  {
+    "name": "numpy_mlp_breast_cancer",
+    "dataset": "sklearn_breast_cancer",
+    "architecture": "30 -> 32 ReLU -> 2 softmax",
+    "trainable_parameters": 1058,
+    "optimizer": "mini-batch SGD",
+    "epochs": 12,
+    "learning_rate": 0.025
+  },
+  {
+    "name": "numpy_mlp_digits",
+    "dataset": "sklearn_digits",
+    "architecture": "64 -> 64 ReLU -> 10 softmax",
+    "trainable_parameters": 4810,
+    "optimizer": "mini-batch SGD",
+    "epochs": 12,
+    "learning_rate": 0.08
+  },
+  {
+    "name": "numpy_cnn_digits",
+    "dataset": "sklearn_digits",
+    "architecture": "8 trainable 3x3 filters -> ReLU -> 2x2 avg pool -> 10 softmax",
+    "trainable_parameters": 810,
+    "optimizer": "mini-batch SGD",
+    "epochs": 12,
+    "learning_rate": 0.04
+  }
+]

@@ -1,0 +1,247 @@
+{
+  "created_by": "torch_ml_suite.py",
+  "device": "mps",
+  "purpose": "PyTorch MLP/CNN artifacts for Entire-as-research-infrastructure diligence",
+  "runs": [
+    {
+      "name": "torch_mlp_breast_cancer",
+      "params": 6274,
+      "seconds": 0.6,
+      "checkpoint": "results/checkpoints/torch_mlp_breast_cancer.pt",
+      "history": [
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 1,
+          "train_loss": 0.5418731687774121,
+          "test_loss": 0.5486508628705165,
+          "train_accuracy": 0.9272300469483568,
+          "test_accuracy": 0.9370629370629371
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 2,
+          "train_loss": 0.39063984351538716,
+          "test_loss": 0.40334516346871435,
+          "train_accuracy": 0.9483568075117371,
+          "test_accuracy": 0.9440559440559441
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 3,
+          "train_loss": 0.24713892080414462,
+          "test_loss": 0.26270555595417955,
+          "train_accuracy": 0.9507042253521126,
+          "test_accuracy": 0.9370629370629371
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 4,
+          "train_loss": 0.15190223649913717,
+          "test_loss": 0.16775445796393015,
+          "train_accuracy": 0.9577464788732394,
+          "test_accuracy": 0.9440559440559441
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 5,
+          "train_loss": 0.10492231749312979,
+          "test_loss": 0.11859960682117023,
+          "train_accuracy": 0.9671361502347418,
+          "test_accuracy": 0.958041958041958
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 6,
+          "train_loss": 0.08000556536963288,
+          "test_loss": 0.09082738049588837,
+          "train_accuracy": 0.9812206572769953,
+          "test_accuracy": 0.972027972027972
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 7,
+          "train_loss": 0.06704953568222377,
+          "test_loss": 0.07758416188555164,
+          "train_accuracy": 0.9859154929577465,
+          "test_accuracy": 0.9790209790209791
+        },
+        {
+          "run": "torch_mlp_breast_cancer",
+          "epoch": 8,
+          "train_loss": 0.06009246300940922,
+          "test_loss": 0.07031383818679757,
+          "train_accuracy": 0.9859154929577465,
+          "test_accuracy": 0.972027972027972
+        }
+      ],
+      "final": {
+        "run": "torch_mlp_breast_cancer",
+        "epoch": 8,
+        "train_loss": 0.06009246300940922,
+        "test_loss": 0.07031383818679757,
+        "train_accuracy": 0.9859154929577465,
+        "test_accuracy": 0.972027972027972
+      }
+    },
+    {
+      "name": "torch_mlp_digits",
+      "params": 9610,
+      "seconds": 0.8454,
+      "checkpoint": "results/checkpoints/torch_mlp_digits.pt",
+      "history": [
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 1,
+          "train_loss": 2.0477695405792997,
+          "test_loss": 2.0445785278744166,
+          "train_accuracy": 0.7260579064587973,
+          "test_accuracy": 0.6933333333333334
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 2,
+          "train_loss": 1.7148451405095453,
+          "test_loss": 1.7132366879781087,
+          "train_accuracy": 0.8366740905716407,
+          "test_accuracy": 0.8155555555555556
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 3,
+          "train_loss": 1.3345980135351974,
+          "test_loss": 1.336610017352634,
+          "train_accuracy": 0.8693392724573126,
+          "test_accuracy": 0.8355555555555556
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 4,
+          "train_loss": 0.9864375996607361,
+          "test_loss": 0.9966189858648512,
+          "train_accuracy": 0.8901262063845583,
+          "test_accuracy": 0.8644444444444445
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 5,
+          "train_loss": 0.7337970038476306,
+          "test_loss": 0.7507039846314324,
+          "train_accuracy": 0.9183370452858204,
+          "test_accuracy": 0.8733333333333333
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 6,
+          "train_loss": 0.5751407865736338,
+          "test_loss": 0.5957200100686815,
+          "train_accuracy": 0.9175946547884187,
+          "test_accuracy": 0.8822222222222222
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 7,
+          "train_loss": 0.46786167217610763,
+          "test_loss": 0.4857525520854526,
+          "train_accuracy": 0.933184855233853,
+          "test_accuracy": 0.9133333333333333
+        },
+        {
+          "run": "torch_mlp_digits",
+          "epoch": 8,
+          "train_loss": 0.3931435164957464,
+          "test_loss": 0.41306378073162503,
+          "train_accuracy": 0.9361544172234595,
+          "test_accuracy": 0.9133333333333333
+        }
+      ],
+      "final": {
+        "run": "torch_mlp_digits",
+        "epoch": 8,
+        "train_loss": 0.3931435164957464,
+        "test_loss": 0.41306378073162503,
+        "train_accuracy": 0.9361544172234595,
+        "test_accuracy": 0.9133333333333333
+      }
+    },
+    {
+      "name": "torch_cnn_digits",
+      "params": 38282,
+      "seconds": 1.2057,
+      "checkpoint": "results/checkpoints/torch_cnn_digits.pt",
+      "history": [
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 1,
+          "train_loss": 2.020702737388384,
+          "test_loss": 2.0233605660332574,
+          "train_accuracy": 0.4951744617668894,
+          "test_accuracy": 0.47555555555555556
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 2,
+          "train_loss": 1.2471025501610884,
+          "test_loss": 1.261074915991889,
+          "train_accuracy": 0.8247958426132146,
+          "test_accuracy": 0.8044444444444444
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 3,
+          "train_loss": 0.6204711114068162,
+          "test_loss": 0.6523809268739489,
+          "train_accuracy": 0.8878990348923533,
+          "test_accuracy": 0.8555555555555555
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 4,
+          "train_loss": 0.42614864322903784,
+          "test_loss": 0.47260145902633666,
+          "train_accuracy": 0.8975501113585747,
+          "test_accuracy": 0.8622222222222222
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 5,
+          "train_loss": 0.3182755632031468,
+          "test_loss": 0.3492474138736725,
+          "train_accuracy": 0.9146250927988122,
+          "test_accuracy": 0.9066666666666666
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 6,
+          "train_loss": 0.25507946857807806,
+          "test_loss": 0.2873763959109783,
+          "train_accuracy": 0.9324424647364514,
+          "test_accuracy": 0.9155555555555556
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 7,
+          "train_loss": 0.22363438609912825,
+          "test_loss": 0.2531666759153207,
+          "train_accuracy": 0.9361544172234595,
+          "test_accuracy": 0.9333333333333333
+        },
+        {
+          "run": "torch_cnn_digits",
+          "epoch": 8,
+          "train_loss": 0.17321188720710626,
+          "test_loss": 0.2118580252263281,
+          "train_accuracy": 0.9487750556792873,
+          "test_accuracy": 0.94
+        }
+      ],
+      "final": {
+        "run": "torch_cnn_digits",
+        "epoch": 8,
+        "train_loss": 0.17321188720710626,
+        "test_loss": 0.2118580252263281,
+        "train_accuracy": 0.9487750556792873,
+        "test_accuracy": 0.94
+      }
+    }
+  ]
+}

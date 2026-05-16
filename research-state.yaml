@@ -1,0 +1,92 @@
+project: ambitious-entire-ideas
+question: "What ambitious, implementable ideas can we build on top of Entire for the BSV Track 1 submission?"
+status: active
+created: "2026-05-16"
+current_loop: inner-loop
+primary_goal: "Build an autonomous research experimentation system and evaluate how Entire fares as its provenance layer."
+assets:
+  tested_repo: "/Users/adb/Desktop/research/basis-fellow/entire-toy-repo"
+  entire_cli_source: "/Users/adb/Desktop/research/basis-fellow/track1-open-source/entire-cli"
+  prior_results: "/Users/adb/Desktop/research/basis-fellow/track1-agentic-stack-test/results"
+facts:
+  - "Entire CLI 0.6.1 installed locally."
+  - "Manual session attach produced checkpoint dd916a8e5979."
+  - "Automatic Codex capture failed under current Codex CLI hook path."
+  - "entire checkpoint explain works locally and exposes prompt/transcript/tool calls/tokens/commit."
+  - "entire search --json requires hosted auth."
+hypotheses:
+  H1:
+    name: "Reviewability Scorecard"
+    status: candidate
+    prediction: "We can quantify how much context Entire adds beyond Git by comparing diff-only review vs checkpoint-explain review."
+  H2:
+    name: "Agent Failure Flight Recorder"
+    status: partial
+    prediction: "Entire checkpoints can be mined to identify repeated agent failure patterns: missing dependency, wrong command, hook failure, test fallback, over-editing."
+  H3:
+    name: "Prompt-to-PR Evidence Packet"
+    status: supported
+    prediction: "A compact evidence packet generated from Entire checkpoints can make AI-generated PRs easier to review and approve."
+  H6:
+    name: "Research Ledger"
+    status: supported
+    prediction: "Entire checkpoints can be converted into reproducible experiment records with intent, intervention, evidence, risks, and commit provenance."
+  H4:
+    name: "Agentic SDLC Benchmark"
+    status: candidate
+    prediction: "Entire can serve as the logging substrate for a benchmark comparing coding agents by recoverability, reviewability, and trace completeness."
+  H5:
+    name: "Regulated-Code Audit Trail"
+    status: candidate
+    prediction: "Entire can be positioned for compliance-heavy teams if redaction, checkpoint trailers, and local explain outputs are packaged into an audit workflow."
+  H7:
+    name: "Checkpoint-Linked ML Research Runs"
+    status: supported
+    prediction: "Entire can become a provenance layer for lightweight ML experiments when paired with dataset cards, model cards, metrics, and artifact storage pointers."
+  H8:
+    name: "Autonomous Research Experimentation System"
+    status: supported
+    prediction: "Entire is strong for agent trace provenance but needs linked metrics, datasets, scheduler decisions, and artifact storage to support autonomous research end to end."
+  H9:
+    name: "Autonomous Provenance Ledger"
+    status: supported
+    prediction: "A joined ledger can turn Entire checkpoint traces plus autonomous experiment artifacts into a complete research-infrastructure record."
+  H10:
+    name: "Submission Narrative Pack"
+    status: supported
+    prediction: "The autonomous research system plus provenance ledger can be converted into a concise Track 1 written response with artifact-backed claims."
+  H11:
+    name: "Tigris Artifact Linkage"
+    status: supported_dry_run
+    prediction: "Tigris can serve as the durable artifact layer for autonomous research runs when Entire owns the agent-process trace."
+  H12:
+    name: "Cross-Layer Log Joiner"
+    status: supported
+    prediction: "Entire checkpoints capture in-agent failures, but run-level research infrastructure needs joined external logs for hook health, auth state, capture failures, and product integration issues."
+  H13:
+    name: "Final Track 1 Response Pack"
+    status: supported
+    prediction: "The strongest written response should center on the autonomous research stress test and frame Entire as the agent-process provenance layer."
+  H14:
+    name: "Final Evidence Bundle"
+    status: supported
+    prediction: "A compact attachment bundle can make the strongest evidence inspectable without making the written response too long."
+  H15:
+    name: "Final Response Polish"
+    status: supported
+    prediction: "The final written response can be shortened below 450 words while preserving the central evidence and candidate judgment."
+  H16:
+    name: "Final Prioritization Response"
+    status: supported
+    prediction: "A concise ranked company framework can complete the first written BSV deliverable and justify choosing Entire for deeper diligence."
+  H17:
+    name: "Final Submission Assembly"
+    status: supported
+    prediction: "A final handoff folder can combine both written responses, the evidence bundle, and the LLM process artifact for submission."
+  H18:
+    name: "Final Submission QA"
+    status: supported
+    prediction: "The assembled submission folder can pass required-file, word-count, placeholder, claim-consistency, and bundle-hash checks."
+next_actions:
+  - "Submission is ready for human review."
+  - "Stop or let heartbeat expire if no new evidence is needed."

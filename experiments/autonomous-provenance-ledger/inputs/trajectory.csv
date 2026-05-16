@@ -1,0 +1,7 @@
+trial_id,model_type,hidden,dropout,learning_rate,params,runtime_seconds,test_accuracy,test_loss,checkpoint
+trial_001,mlp,64,0.0,0.001,4810,0.8486,0.8866666666666667,0.9459726145532397,results/checkpoints/trial_001_mlp.pt
+trial_002,mlp,128,0.1,0.001,9610,0.5989,0.8955555555555555,0.6032595099343194,results/checkpoints/trial_002_mlp.pt
+trial_003,cnn,64,0.1,0.001,38282,0.9131,0.9311111111111111,0.26207292477289834,results/checkpoints/trial_003_cnn.pt
+trial_004,cnn,96,0.1,0.0008,55018,1.2298,0.8911111111111111,0.35844355689154733,results/checkpoints/trial_004_cnn.pt
+trial_005,cnn,96,0.1,0.0012,55018,0.713,0.96,0.16752652789155642,results/checkpoints/trial_005_cnn.pt
+trial_006,cnn,144,0.1,0.0009599999999999999,80122,1.3501,0.9311111111111111,0.2592328076892429,results/checkpoints/trial_006_cnn.pt

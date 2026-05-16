@@ -1,0 +1,67 @@
+{
+  "entire_checkpoint_only_score": 7,
+  "joined_research_system_score": 10,
+  "max_score": 10,
+  "requirements": [
+    {
+      "requirement": "intent",
+      "description": "Captures original research/developer intent.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "transcript",
+      "description": "Captures agent reasoning/process transcript.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "tool_calls",
+      "description": "Captures commands/tool calls.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "commit_linkage",
+      "description": "Links checkpoint to commit context.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "metrics",
+      "description": "Captures experiment metrics.",
+      "entire_checkpoint_only": false,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "dataset_identity",
+      "description": "Captures dataset identity and version.",
+      "entire_checkpoint_only": false,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "artifact_pointers",
+      "description": "Captures model/artifact pointers.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "environment",
+      "description": "Captures environment/package metadata.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "scheduler_decisions",
+      "description": "Captures autonomous scheduler decisions.",
+      "entire_checkpoint_only": false,
+      "joined_research_system": true
+    },
+    {
+      "requirement": "cross_layer_failures",
+      "description": "Captures agent, shell, and experiment failures.",
+      "entire_checkpoint_only": true,
+      "joined_research_system": true
+    }
+  ]
+}

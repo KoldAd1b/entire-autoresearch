@@ -1,0 +1,35 @@
+[
+  {
+    "name": "torch_mlp_breast_cancer",
+    "dataset": "sklearn_breast_cancer",
+    "architecture": "30 -> 64 ReLU -> 64 ReLU -> 2",
+    "trainable_parameters": 6274,
+    "optimizer": "AdamW",
+    "loss": "CrossEntropyLoss",
+    "epochs": 8,
+    "learning_rate": 0.0015,
+    "checkpoint": "results/checkpoints/torch_mlp_breast_cancer.pt"
+  },
+  {
+    "name": "torch_mlp_digits",
+    "dataset": "sklearn_digits",
+    "architecture": "64 -> 128 ReLU dropout -> 10",
+    "trainable_parameters": 9610,
+    "optimizer": "AdamW",
+    "loss": "CrossEntropyLoss",
+    "epochs": 8,
+    "learning_rate": 0.001,
+    "checkpoint": "results/checkpoints/torch_mlp_digits.pt"
+  },
+  {
+    "name": "torch_cnn_digits",
+    "dataset": "sklearn_digits",
+    "architecture": "Conv16 -> pool -> Conv32 -> MLP",
+    "trainable_parameters": 38282,
+    "optimizer": "AdamW",
+    "loss": "CrossEntropyLoss",
+    "epochs": 8,
+    "learning_rate": 0.001,
+    "checkpoint": "results/checkpoints/torch_cnn_digits.pt"
+  }
+]

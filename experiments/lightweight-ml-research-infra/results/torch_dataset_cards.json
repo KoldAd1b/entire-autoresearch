@@ -1,0 +1,22 @@
+[
+  {
+    "name": "sklearn_breast_cancer",
+    "source": "scikit-learn built-in load_breast_cancer",
+    "task": "binary tabular classification",
+    "samples": 569,
+    "shape": "(569, 30)",
+    "classes": 2,
+    "train_samples": 426,
+    "test_samples": 143
+  },
+  {
+    "name": "sklearn_digits",
+    "source": "scikit-learn built-in load_digits",
+    "task": "10-class image classification",
+    "samples": 1797,
+    "shape": "1797 x 8 x 8",
+    "classes": 10,
+    "train_samples": 1347,
+    "test_samples": 450
+  }
+]

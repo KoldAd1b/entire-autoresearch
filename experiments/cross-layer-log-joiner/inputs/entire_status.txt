@@ -1,0 +1,11 @@
+● Enabled · manual-commit · branch main
+  Agents · Codex
+
+── Active Sessions ─────────────────────────────────────────
+
+Codex · 019e2fb4-de13-7f30-a3a4-cbbea0ce7acf
+started just now · tokens 169.3k
+
+────────────────────────────────────────────────────────────
+1 session
+
