@@ -66,3 +66,41 @@ The strongest live Entire checkpoint from this repository is:
 - Commit: `8cdb5f8 Add experiment inventory utility`
 
 Locally, `entire checkpoint explain 983891961bcc` showed the prompt, transcript, tool calls, verification, token usage, author, and linked commit. This is the core product evidence: Entire exposes context behind a code change that GitHub cannot infer from the diff alone.
+
+## Cloud UI Screenshots
+
+### Commit-level checkpoint view
+
+![Entire Cloud commit checkpoint view](assets/screenshots/entire-cloud-commits.png)
+
+This screenshot shows Entire Cloud displaying the `entire-autoresearch` commits and attaching a Codex checkpoint under commit `8cdb5f8 Add experiment inventory utility`.
+
+What it proves:
+
+- Entire Cloud can see the GitHub-backed repository.
+- The checkpoint is linked to the specific commit it explains.
+- The UI is close to the right review workflow because the checkpoint appears near the code change.
+
+Product critique:
+
+- The checkpoint row says `Untitled session`, which hides the most important review field: task intent.
+- The row reports `0 steps`, even though the local checkpoint explain output contains tool calls and verification.
+- The review surface should make actions like opening the transcript, inspecting tool calls, and checking verification more obvious.
+
+### Overview dashboard
+
+![Entire Cloud overview dashboard](assets/screenshots/entire-cloud-overview.png)
+
+This screenshot shows the repository-level dashboard after Entire indexed the test repository.
+
+What it proves:
+
+- Entire registered one checkpoint across three commits.
+- The dashboard tracks high-level activity, token usage, messages, active PRs, and contributors.
+
+Product critique:
+
+- The dashboard is analytics-first, while the strongest product wedge is review-first.
+- `Messages 0` is confusing because the checkpoint has a transcript locally.
+- The token count shown in the dashboard appears to use a different definition than the local checkpoint output, which needs clearer labeling.
+- `No contributor data available` feels under-indexed given that local checkpoint metadata includes author information.
