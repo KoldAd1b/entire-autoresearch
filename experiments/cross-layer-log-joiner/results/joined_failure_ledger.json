@@ -1,15 +1,14 @@
 {
   "summary": {
-    "failure_categories": 7,
+    "failure_categories": 3,
     "checkpoint_visible_categories": 2,
-    "external_only_categories": 5,
+    "external_only_categories": 1,
     "source_files": [
       "checkpoint_failure_report.json",
       "entire_checkpoint_explain.txt",
       "entire_direct_test_output.txt",
       "entire_search_top_k_unique.txt",
-      "entire_status.txt",
-      "final_findings.md"
+      "entire_status.txt"
     ]
   },
   "categories": [
@@ -66,70 +65,12 @@
       ]
     },
     {
-      "category": "codex_hook_config_drift",
-      "checkpoint_visible": false,
-      "layers": [
-        "human_synthesis"
-      ],
-      "source_count": 1,
-      "recommendation": "Keep generated Codex hook config aligned with current Codex feature flags.",
-      "hits": [
-        {
-          "source": "final_findings.md",
-          "layer": "human_synthesis",
-          "examples": [
-            "s, files touched, token count, and linked commit. - What broke: Automatic capture did not create a checkpoint after either Codex session. Codex reported that `[features].codex_hooks` is deprecated and should be `[features].hooks`; even when I ran Codex with `--enable hooks`, the turn ended with `after_agent hook failed ... legacy_notify error=No such file or direc",
-            "create a checkpoint after either Codex session. Codex reported that `[features].codex_hooks` is deprecated and should be `[features].hooks`; even when I ran Codex with `--enable hooks`, the turn ended with `after_agent hook failed ... legacy_notify error=No such file or directory`. `entire search --json` required hosted auth, so local checkpoint searc"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "after_agent_hook_failure",
-      "checkpoint_visible": false,
-      "layers": [
-        "human_synthesis"
-      ],
-      "source_count": 1,
-      "recommendation": "Capture hook execution failures as first-class checkpoint/run health events.",
-      "hits": [
-        {
-          "source": "final_findings.md",
-          "layer": "human_synthesis",
-          "examples": [
-            "x session. Codex reported that `[features].codex_hooks` is deprecated and should be `[features].hooks`; even when I ran Codex with `--enable hooks`, the turn ended with `after_agent hook failed ... legacy_notify error=No such file or directory`. `entire search --json` required hosted auth, so local checkpoint search was not available without login. - Evidence f",
-            "at `[features].codex_hooks` is deprecated and should be `[features].hooks`; even when I ran Codex with `--enable hooks`, the turn ended with `after_agent hook failed ... legacy_notify error=No such file or directory`. `entire search --json` required hosted auth, so local checkpoint search was not available without login. - Evidence files: `entire_checkpoint_explain.txt`, `entire_che"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "automatic_capture_failure",
-      "checkpoint_visible": false,
-      "layers": [
-        "human_synthesis"
-      ],
-      "source_count": 1,
-      "recommendation": "Expose automatic-capture success/failure in `entire status` and surface remediation commands.",
-      "hits": [
-        {
-          "source": "final_findings.md",
-          "layer": "human_synthesis",
-          "examples": [
-            "`entire checkpoint explain dd916a8e5979` produced the useful artifact: user prompt, transcript, tool calls, files touched, token count, and linked commit. - What broke: Automatic capture did not create a checkpoint after either Codex session. Codex reported that `[features].codex_hooks` is deprecated and should be `[features].hooks`; even when I ran Codex with `--enable hooks`, the",
-            "iles into one review artifact. That is exactly the gap normal Git leaves open. Improvement areas: The Codex integration needs to track current Codex hook configuration. Automatic capture failing while manual attach works is the main product reliability issue I found. ### Parasail Positioning: Parasail should be evaluated as an inference utility layer, not a GP"
-          ]
-        }
-      ]
-    },
-    {
       "category": "hosted_auth_dependency",
       "checkpoint_visible": false,
       "layers": [
-        "cli_search",
-        "human_synthesis"
+        "cli_search"
       ],
-      "source_count": 2,
+      "source_count": 1,
       "recommendation": "Distinguish local checkpoint inspection from hosted search/activity features in docs and CLI errors.",
       "hits": [
         {
@@ -138,32 +79,6 @@
           "examples": [
             "not authenticated. Run 'entire login' to authenticate",
             "not authenticated. Run 'entire login' to authenticate"
-          ]
-        },
-        {
-          "source": "final_findings.md",
-          "layer": "human_synthesis",
-          "examples": [
-            "when I ran Codex with `--enable hooks`, the turn ended with `after_agent hook failed ... legacy_notify error=No such file or directory`. `entire search --json` required hosted auth, so local checkpoint search was not available without login. - Evidence files: `entire_checkpoint_explain.txt`, `entire_checkpoint_list.txt`, `entire_last_commit_raw.txt"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "manual_attach_required",
-      "checkpoint_visible": false,
-      "layers": [
-        "human_synthesis"
-      ],
-      "source_count": 1,
-      "recommendation": "Treat manual attach as a fallback path but not the default happy path for autonomous systems.",
-      "hits": [
-        {
-          "source": "final_findings.md",
-          "layer": "human_synthesis",
-          "examples": [
-            "e.io/install.sh | bash` installed `Entire CLI 0.6.1` to `~/.local/bin/entire`. `entire enable -y --agent codex` installed Git hooks and Codex hook config. - What worked: Manual session attachment worked well. `entire session attach <codex-session-id> -a codex -f` created checkpoint `dd916a8e5979` and amended the commit with an `Entire-Checkpoint` trailer. `entire checkp",
-            ".6.1` to `~/.local/bin/entire`. `entire enable -y --agent codex` installed Git hooks and Codex hook config. - What worked: Manual session attachment worked well. `entire session attach <codex-session-id> -a codex -f` created checkpoint `dd916a8e5979` and amended the commit with an `Entire-Checkpoint` trailer. `entire checkpoint explain dd916a8e5979` pr"
           ]
         }
       ]

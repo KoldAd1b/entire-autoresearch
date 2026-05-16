@@ -333,51 +333,6 @@ def main():
         )
     )
 
-    lines = [
-        "# Autonomous Research System Summary",
-        "",
-        f"- Device: `{device}`",
-        f"- Trials: {len(results)}",
-        f"- Baseline trial: `{baseline['trial_id']}` accuracy {baseline['final']['test_accuracy']:.4f}",
-        f"- Best trial: `{best['trial_id']}` accuracy {best['final']['test_accuracy']:.4f}",
-        f"- Absolute improvement: {best['final']['test_accuracy'] - baseline['final']['test_accuracy']:.4f}",
-        "",
-        "## Trial Trajectory",
-        "",
-    ]
-    for r in results:
-        lines.append(
-            f"- `{r['trial_id']}` {r['config']['model_type']} hidden={r['config']['hidden']} "
-            f"dropout={r['config']['dropout']} lr={r['config']['learning_rate']:.5f} "
-            f"acc={r['final']['test_accuracy']:.4f} checkpoint=`{Path(r['checkpoint']).name}`"
-        )
-    lines.extend(
-        [
-            "",
-            "## Entire Fit",
-            "",
-            f"- Entire checkpoint only: {entire_score}/{len(score_rows)} provenance requirements covered.",
-            f"- Joined autonomous system record: {joined_score}/{len(score_rows)} provenance requirements covered.",
-            "",
-            "Entire is strong for the agent trace: intent, transcript, commands, and commit linkage. It is not sufficient alone for autonomous research provenance because the loop also needs structured metrics, dataset identity, scheduler decisions, model checkpoint pointers, and environment metadata.",
-        ]
-    )
-    (args.out_dir / "summary.md").write_text("\n".join(lines))
-
-    score_md = [
-        "# Entire Fit Scorecard",
-        "",
-        f"- Entire checkpoint only: **{entire_score}/{len(score_rows)}**",
-        f"- Joined autonomous system record: **{joined_score}/{len(score_rows)}**",
-        "",
-        "| Requirement | Entire checkpoint only | Joined record | Meaning |",
-        "| --- | --- | --- | --- |",
-    ]
-    for row in score_rows:
-        score_md.append(
-            f"| `{row['requirement']}` | {row['entire_checkpoint_only']} | {row['joined_research_system']} | {row['description']} |"
-        )
-    (args.out_dir / "entire_fit_scorecard.md").write_text("\n".join(score_md))
     print(f"Wrote autonomous research artifacts to {args.out_dir}")
 
 

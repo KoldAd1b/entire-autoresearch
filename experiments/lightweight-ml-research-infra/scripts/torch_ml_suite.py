@@ -213,39 +213,6 @@ def write_artifacts(out_dir, dataset_cards, model_cards, runs, device):
         for run in runs:
             writer.writerows(run["history"])
 
-    lines = [
-        "# PyTorch Lightweight ML Summary",
-        "",
-        f"- Device: `{device}`",
-        f"- Runs: {len(runs)}",
-        "",
-        "## Results",
-        "",
-    ]
-    for run in runs:
-        final = run["final"]
-        lines.extend(
-            [
-                f"### {run['name']}",
-                "",
-                f"- Parameters: {run['params']}",
-                f"- Runtime seconds: {run['seconds']}",
-                f"- Checkpoint: `{run['checkpoint']}`",
-                f"- Final train accuracy: {final['train_accuracy']:.4f}",
-                f"- Final test accuracy: {final['test_accuracy']:.4f}",
-                f"- Final test loss: {final['test_loss']:.4f}",
-                "",
-            ]
-        )
-    lines.extend(
-        [
-            "## Submission Angle",
-            "",
-            "These runs create the kind of concrete artifact trail that a research-infrastructure version of Entire should preserve: dataset choice, architecture, hyperparameters, metrics, checkpoints, and the agent transcript that produced them.",
-        ]
-    )
-    (out_dir / "torch_summary.md").write_text("\n".join(lines))
-
 
 def main():
     parser = argparse.ArgumentParser(description="Train lightweight PyTorch MLP/CNN baselines for research-infrastructure diligence.")

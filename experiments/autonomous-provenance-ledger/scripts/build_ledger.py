@@ -122,64 +122,6 @@ def main():
 
     (args.results / "provenance_ledger.json").write_text(json.dumps(ledger, indent=2))
 
-    missing = ", ".join(f"`{item}`" for item in ledger["entire_fit"]["missing_from_entire_only"])
-    md = f"""# Autonomous Research Provenance Ledger
-
-## Thesis
-
-Entire works best as the agent-trace spine for autonomous research. It captures intent, transcript, tool calls, and commit linkage, but the full research record needs joined experiment artifacts.
-
-## Run Summary
-
-- System: `{ledger["autonomous_run"]["system"]}`
-- Objective: {ledger["autonomous_run"]["objective"]}
-- Trials: {ledger["autonomous_run"]["trial_count"]}
-- Decisions: {ledger["autonomous_run"]["decision_count"]}
-- Device: `{ledger["autonomous_run"]["device"]}`
-- Baseline: `{ledger["autonomous_run"]["baseline_trial"]}` at {baseline_acc:.4f}
-- Best: `{best_trial}` at {best_acc:.4f}
-- Absolute improvement: {best_acc - baseline_acc:.4f}
-
-## Best Trial
-
-- Model: `{ledger["best_trial"]["model_type"]}`
-- Hidden units: {ledger["best_trial"]["hidden"]}
-- Dropout: {ledger["best_trial"]["dropout"]}
-- Learning rate: {ledger["best_trial"]["learning_rate"]}
-- Parameters: {ledger["best_trial"]["params"]}
-- Checkpoint pointer: `{ledger["best_trial"]["checkpoint"]}`
-
-## Entire Evidence
-
-- Checkpoint id: `{entire_signals["checkpoint_id"]}`
-- Tool calls: {entire_signals["tool_calls"]}
-- Assistant turns: {entire_signals["assistant_turns"]}
-- User turns: {entire_signals["user_turns"]}
-- Test mentions: {entire_signals["test_mentions"]}
-- Failure mentions: {entire_signals["failure_mentions"]}
-- Commit linkage detected: {entire_signals["has_commit_linkage"]}
-
-## Entire Fit
-
-- Entire checkpoint only: {scorecard["entire_checkpoint_only_score"]}/{scorecard["max_score"]}
-- Joined research record: {scorecard["joined_research_system_score"]}/{scorecard["max_score"]}
-- Missing from Entire-only record: {missing}
-
-## Recommendation
-
-Entire should be evaluated as the agent-process provenance layer, not as a full ML experiment tracker. The product opportunity is to connect checkpoints to structured experiment artifacts: scheduler decisions, metrics, model checkpoints, dataset snapshots, environment metadata, and storage URIs.
-"""
-    (args.results / "provenance_ledger.md").write_text(md)
-
-    claims = f"""# Submission-Ready Claims
-
-1. I built a tiny autonomous research experimentation system, not just a static product demo.
-2. The system ran {len(trajectory)} trials and improved validation accuracy from {baseline_acc:.2%} to {best_acc:.2%}.
-3. Entire checkpoint-only evidence covered {scorecard["entire_checkpoint_only_score"]}/{scorecard["max_score"]} provenance needs.
-4. A joined research ledger covered {scorecard["joined_research_system_score"]}/{scorecard["max_score"]}, showing the exact product gap.
-5. My conclusion: Entire is compelling as the agent-trace layer, but it needs artifact linkage to become full autonomous research infrastructure.
-"""
-    (args.results / "submission_claims.md").write_text(claims)
     print(f"Wrote joined provenance ledger to {args.results}")
 
 

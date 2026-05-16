@@ -38,7 +38,6 @@ PATTERNS = {
 
 SOURCE_LAYERS = {
     "entire_checkpoint_explain.txt": "entire_checkpoint",
-    "final_findings.md": "human_synthesis",
     "entire_status.txt": "product_status",
     "entire_search_top_k_unique.txt": "cli_search",
     "entire_direct_test_output.txt": "test_output",
@@ -118,48 +117,6 @@ def main():
     }
     (args.results / "joined_failure_ledger.json").write_text(json.dumps(report, indent=2))
 
-    lines = [
-        "# Cross-Layer Failure Ledger",
-        "",
-        "## Summary",
-        "",
-        f"- Failure categories found: {len(joined)}",
-        f"- Visible in Entire checkpoint: {checkpoint_visible}",
-        f"- External-only categories: {external_only}",
-        "",
-        "## Categories",
-        "",
-    ]
-    for item in joined:
-        lines.extend(
-            [
-                f"### {item['category']}",
-                "",
-                f"- Checkpoint visible: {item['checkpoint_visible']}",
-                f"- Layers: {', '.join(f'`{layer}`' for layer in item['layers'])}",
-                f"- Recommendation: {item['recommendation']}",
-                "",
-                "Evidence:",
-                "",
-            ]
-        )
-        for hit in item["hits"]:
-            lines.append(f"- `{hit['source']}` / `{hit['layer']}`: {hit['examples'][0]}")
-        lines.append("")
-    (args.results / "joined_failure_ledger.md").write_text("\n".join(lines))
-
-    coverage = [
-        "# Coverage Analysis",
-        "",
-        "## Interpretation",
-        "",
-        "The checkpoint transcript captures in-agent failures, especially test fallback behavior. The joined ledger adds product integration failures and hosted/local boundary issues that live outside the transcript.",
-        "",
-        "## Product Lesson",
-        "",
-        "A production research-infrastructure version of Entire needs a run-level ledger that links checkpoint transcript, hook health, CLI status, search/auth state, test output, and human synthesis.",
-    ]
-    (args.results / "coverage_analysis.md").write_text("\n".join(coverage))
     print(f"Wrote cross-layer failure ledger with {len(joined)} categories")
 
 

@@ -240,39 +240,6 @@ def write_outputs(out_dir, dataset_cards, model_cards, runs):
             for row in run["history"]:
                 writer.writerow({"run": run["name"], **row})
 
-    lines = [
-        "# Lightweight ML Experiment Summary",
-        "",
-        "## Why This Matters",
-        "",
-        "This turns the Entire evaluation into a research-infrastructure test: real datasets, real training runs, metrics, dataset cards, model cards, and reproducibility metadata.",
-        "",
-        "## Results",
-        "",
-    ]
-    for run in runs:
-        final = run["final"]
-        lines.extend(
-            [
-                f"### {run['name']}",
-                "",
-                f"- Parameters: {run['params']}",
-                f"- Runtime seconds: {run['seconds']}",
-                f"- Final train accuracy: {final['train_accuracy']:.4f}",
-                f"- Final test accuracy: {final['test_accuracy']:.4f}",
-                f"- Final test loss: {final['test_loss']:.4f}",
-                "",
-            ]
-        )
-    lines.extend(
-        [
-            "## Infrastructure Takeaway",
-            "",
-            "For a BSV-style product diligence writeup, these artifacts show the next product layer Entire could support: checkpoint-linked ML experiment provenance. The missing piece is a joined ledger that binds the agent transcript, code commit, dataset card, model card, metrics, and artifact storage pointer into one reproducible record.",
-        ]
-    )
-    (out_dir / "summary.md").write_text("\n".join(lines))
-
 
 def main():
     parser = argparse.ArgumentParser(description="Train lightweight NumPy MLP/CNN baselines and write research artifacts.")
