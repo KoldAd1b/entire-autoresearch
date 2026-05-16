@@ -1,0 +1,18 @@
+{
+  "cli_version": "0.6.1",
+  "checkpoint_id": "983891961bcc",
+  "session_id": "019e31c0-ae29-70f2-828b-75a3fb7eb013",
+  "strategy": "manual-commit",
+  "created_at": "2026-05-16T17:07:46.01677Z",
+  "checkpoints_count": 0,
+  "files_touched": null,
+  "agent": "Codex",
+  "model": "",
+  "token_usage": {
+    "input_tokens": 26369,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 212224,
+    "output_tokens": 3258,
+    "api_call_count": 10
+  }
+}
